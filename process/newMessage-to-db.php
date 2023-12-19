@@ -5,13 +5,15 @@ require_once('./database-connect.php');
 // var_dump($_POST);
 
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])
-&& isset($_POST['content']) && !empty($_POST['content'])){
-    
-    $pseudo = $_POST['pseudo'];
-    $content = $_POST['content'];
-    $ip = $_POST['ip_adress'];
-    $dateTime = $_POST['dateTime'];
+    && isset($_POST['content']) && !empty($_POST['content'])){
 
+
+$pseudo = $_POST['pseudo'];
+$content = $_POST['content'];
+$ip = $_POST['ip_adress'];
+$dateTime = $_POST['dateTime'];
+
+setcookie( 'pseudo', $pseudo, time()+3600*12,'/');
     // var_dump($pseudo);
     
     //requete existance pseudo (if count=1 pseudo existant, else pseudo a creer)
@@ -48,10 +50,10 @@ if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])
         ]);
 
         $idLastUSer = $database->lastInsertId();
-        var_dump($idLastUSer);
+        // var_dump($idLastUSer);
 
         $requete = $database->prepare("INSERT INTO messages (content, created_at, ip_adress, user_id) 
-        VALUES (:content,:created_at,:ip_adress,:user_id)");
+                                        VALUES (:content,:created_at,:ip_adress,:user_id)");
 
         $result = $requete->execute(['content' => $content, 
                                     'created_at' => $dateTime, 
