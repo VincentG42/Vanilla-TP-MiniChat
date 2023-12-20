@@ -74,7 +74,7 @@ $ipUSer = $_SERVER['SERVER_ADDR'];
 
                 <div class="col-3 m-2">
                     <label for="fname">Pseudo: </label><br>
-                    <input type="text" id="pseudo" name="pseudo" class="card-bgcolor" value="<?php echo $_COOKIE['pseudo'] ?>">
+                    <input type="text" id="pseudo" name="pseudo" class="card-bgcolor" value="<?php echo isset($_COOKIE['pseudo']) ? $_COOKIE['pseudo'] : 'inscrivez-votre pseudo' ?>">
                 </div>
 
                 <div class="col-7 m-2">

@@ -105,7 +105,8 @@ Remplacer "TextePrérempli" par le pseudo du visiteur une fois celui-ci enregist
 
 
 * Associer une couleur unique à chaque nom d'utilisateur
-    * Vous pouvez utiliser ce repository[ https://github.com/mistic100/RandomColor.php](https://github.com/mistic100/RandomColor.php)​
+    * Vous pouvez utiliser ce repository[ https://github.com/mistic100/RandomCo
+    lor.php](https://github.com/mistic100/RandomColor.php)​
 * Vous devez avoir une colonne appropriée dans votre table pour gérer cette fonctionnalité.
 
 
